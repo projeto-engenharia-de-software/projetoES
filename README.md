@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Contribuidores
+-    [@mrafaelcavalcanti](https://github.com/mrafaelcavalcanti) como Marcos Rafael Marques Cavalcanti
+-    [@jaffeMarques](https://github.com/jaffeMarques) como Jaffé Marques
