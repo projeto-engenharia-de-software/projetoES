@@ -25,4 +25,7 @@ Things you may want to cover:
 
 ## Contribuidores
 -    [@mrafaelcavalcanti](https://github.com/mrafaelcavalcanti) como Marcos Rafael Marques Cavalcanti
--    [@jaffeMarques](https://github.com/jaffeMarques) como Jaffé Marques
+-    [@jaffeMarques](https://github.com/jaffeMarques) Jaffé David Silva Marques
+
+## Link do heroku
+-    [app](https://projeto-es-app.herokuapp.com/)
