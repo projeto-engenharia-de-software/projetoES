@@ -47,6 +47,7 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'database_cleaner'
   gem 'webdrivers'
+  gem 'bcrypt'
 end
 
 group :production do
