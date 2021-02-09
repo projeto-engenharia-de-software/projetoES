@@ -13,7 +13,7 @@ class ComentariosController < ApplicationController
   # GET /comentarios/new
   def new
     @usuario = Usuario.find(params[:usuario_id])
-    @curso = Curso.find(params[:curso_id])
+    @curso = @usuario.cursos.find(params[:curso_id])
     @comentario = @curso.comentarios.new
   end
 

@@ -16,7 +16,7 @@
       <tr>
         <td><%= aula.nomeAula%></td>
         <td><%= aula.curso_id %></td>
-        <td><%= link_to 'Show', usuario_curso_aulas_path(aula) %></td>
+        <td><%= link_to 'Show', usuario_curso_aula_path(@current_user,aula.curso_id, aula) %></td>
         <td><%= link_to 'Edit', edit_usuario_curso_aula_path(@current_user.id, aula.curso_id, aula) %></td>
         <td><%= link_to 'Destroy', usuario_curso_aula_path(@current_user.id, aula.curso_id, aula), method: :delete, data: { confirm: 'Tem certeza?' } %></td>
       </tr>

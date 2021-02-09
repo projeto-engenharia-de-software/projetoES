@@ -15,7 +15,7 @@ class AulasController < ApplicationController
   # GET /aulas/new
   def new
     @usuario = Usuario.find(params[:usuario_id])
-    @curso = Curso.find(params[:curso_id])
+    @curso = @usuario.cursos.find(params[:curso_id])
     @aula = @curso.aulas.new
   end
 
