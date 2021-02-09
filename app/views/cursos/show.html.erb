@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome do curso:</strong>
+  <%= @curso.nomeCurso %>
+</p>
+
+<p>
+  <strong>detalhesCurso:</strong>
+  <%= @curso.detalhesCurso %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @curso.usuario_id %>
+</p>
+
+<%= link_to 'Edit', edit_usuario_curso_path(@curso) %> |
+<%= link_to 'Back', usuario_cursos_path %>
+<%= link_to 'Aulas', usuario_curso_aulas_path(@current_user, @curso) %>
+<% if @current_user.id == @curso.usuario_id %>
+  <%= link_to 'nova aula', new_usuario_curso_aula_path(@current_user, @curso) %>
+<% end %>
+<%= link_to 'comentarios', usuario_curso_comentarios_path(@current_user, @curso) %>
+<%= link_to 'novo comentario', new_usuario_curso_comentario_path(@current_user, @curso) %>

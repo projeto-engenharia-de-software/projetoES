@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to "logout", :logout %>
+<p>
+  <strong>Email:</strong>
+  <%= @usuario.email %>
+</p>
+
+<p>
+  <strong>Senha:</strong>
+  <%= @usuario.senha %>
+</p>
+
+<p>
+  <strong>Nome de usuario:</strong>
+  <%= @usuario.nomeUsuario %>
+</p>
+
+<p>
+  <strong>Tipo de usuario:</strong>
+  <%= @usuario.tipoUsuario %>
+</p>
+
+<%= link_to 'editar', edit_usuario_path(@usuario) %> |
+<%= link_to 'Destroy', @usuario, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<% if @usuario.tipoUsuario == 1 %>
+  <%= link_to 'Novo curso', new_usuario_curso_path(@usuario)%> |
+<% end %>
+<%= link_to 'Cursos',  usuario_cursos_path(@usuario) %>

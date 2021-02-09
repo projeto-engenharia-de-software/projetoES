@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cursos</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Nome do curso</th>
+      <th>Criador</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cursos.each do |curso| %>
+      <tr>
+        <td><%= curso.nomeCurso %></td>
+        <td><%= curso.usuario_id %></td>
+        <td><%= link_to 'Show', [@current_user, curso] %></td>
+        <% if @current_user.id == curso.usuario_id %>
+          <td><%= link_to 'Edit', edit_usuario_curso_path(curso.usuario_id, curso) %></td>
+          <td><%= link_to 'Destroy', [@current_user, curso], id:"d-#{curso.nomeCurso}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back', usuario_path(@current_user) %>
