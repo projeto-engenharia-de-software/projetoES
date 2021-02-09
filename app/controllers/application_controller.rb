@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def id_admin?
-    if current_user != nil and current_user.tipoUsuario != 1
+    if !current_user.nil? and current_user.tipoUsuario != 1
       redirect_to usuario_path(current_user.id)
     end
   end

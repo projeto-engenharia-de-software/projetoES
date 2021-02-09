@@ -56,7 +56,7 @@ class UsuariosController < ApplicationController
   # DELETE /usuarios/1 or /usuarios/1.json
   def destroy
     @usuario.destroy
-    if @current_user.nil? and @usuario != nil and @current_user.id == @usuario.id
+    if !@current_user.nil? and @usuario != nil and @current_user.id == @usuario.id
       :logout
       respond_to do |format|
         format.html { redirect_to login_path, notice: "usuario apagado com sucesso" }
