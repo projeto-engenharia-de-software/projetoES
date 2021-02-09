@@ -24,15 +24,16 @@ ActiveRecord::Schema.define(version: 2021_01_31_231721) do
   create_table "comentarios", force: :cascade do |t|
     t.text "comentario"
     t.integer "usuario_id", null: false
-    t.integer "aula_id"
+    t.integer "curso_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["aula_id"], name: "index_comentarios_on_aula_id"
+    t.index ["curso_id"], name: "index_comentarios_on_curso_id"
     t.index ["usuario_id"], name: "index_comentarios_on_usuario_id"
   end
 
   create_table "cursos", force: :cascade do |t|
     t.string "nomeCurso"
+    t.string "detalhesCurso"
     t.integer "usuario_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

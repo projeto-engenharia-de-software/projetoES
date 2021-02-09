@@ -1,6 +1,6 @@
 class ComentariosController < ApplicationController
   before_action :set_comentario, only: %i[ show edit update destroy ]
-
+  before_action :require_logged_user
   # GET /comentarios or /comentarios.json
   def index
     @comentarios = Comentario.all
@@ -12,7 +12,9 @@ class ComentariosController < ApplicationController
 
   # GET /comentarios/new
   def new
-    @comentario = Comentario.new
+    @usuario = Usuario.find(params[:usuario_id])
+    @curso = Curso.find(params[:curso_id])
+    @comentario = @curso.comentarios.new
   end
 
   # GET /comentarios/1/edit
@@ -21,7 +23,9 @@ class ComentariosController < ApplicationController
 
   # POST /comentarios or /comentarios.json
   def create
-    @comentario = Comentario.new(comentario_params)
+    @curso = Curso.find(params[:curso_id])
+    @comentario = @curso.comentarios.new(comentario_params)
+    @comentario.usuario_id = @current_user.id
 
     respond_to do |format|
       if @comentario.save
@@ -64,6 +68,6 @@ class ComentariosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comentario_params
-      params.require(:comentario).permit(:comentario, :usuario_id, :aula)
+      params.require(:comentario).permit(:comentario, :usuario_id, :curso_id)
     end
 end

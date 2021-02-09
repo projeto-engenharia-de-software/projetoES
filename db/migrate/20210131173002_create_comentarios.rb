@@ -3,7 +3,7 @@ class CreateComentarios < ActiveRecord::Migration[6.0]
     create_table :comentarios do |t|
       t.text :comentario
       t.references :usuario, null: false, foreign_key: true
-      t.references :aula
+      t.references :curso
 
       t.timestamps
     end

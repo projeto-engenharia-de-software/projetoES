@@ -12,23 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :email %>
+    <label>Email</label>
+    <% form.label :email %>
     <%= form.text_field :email %>
   </div>
 
   <div class="field">
-    <%= form.label :senha %>
+    <label>Senha</label>
+    <% form.label :senha %>
     <%= form.text_field :senha %>
   </div>
 
   <div class="field">
-    <%= form.label :nomeUsuario %>
+    <label>Nome de usuario</label>
+    <% form.label :nomeUsuario %>
     <%= form.text_field :nomeUsuario %>
   </div>
 
   <div class="field">
-    <%= form.label :tipoUsuario %>
-    <%= form.text_field :tipoUsuario %>
+    <label>Tipo de usuario</label>
+    <% form.label :tipoUsuario %>
+    <%= form.radio_button :tipoUsuario, 1, id:"admin" %> admin <br />
+    <%= form.radio_button :tipoUsuario, 2, id:"aluno" %> aluno <br />
   </div>
 
   <div class="actions">

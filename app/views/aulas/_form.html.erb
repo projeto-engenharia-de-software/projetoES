@@ -1,5 +1,5 @@
-<%= form_with(model: aula, local: true) do |form| %>
-  <% if aula.errors.any? %>
+<%= form_for([@usuario, @curso, @aula]) do |form| %>
+  <% if @aula.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(aula.errors.count, "error") %> prohibited this aula from being saved:</h2>
 
@@ -10,6 +10,11 @@
       </ul>
     </div>
   <% end %>
+
+  <div class="field">
+    <%= form.label :nomeAula %>
+    <%= form.text_field :nomeAula %>
+  </div>
 
   <div class="field">
     <%= form.label :conteudo %>

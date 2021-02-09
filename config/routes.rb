@@ -1,13 +1,20 @@
 Rails.application.routes.draw do
 
-  resources :cursos
   resources :usuarios do
-    resources :comentarios
-    resources :cursos
+    resources :cursos do
+      resources :comentarios
+      resources :aulas
+    end
   end
-  resources :cursos do
-    resources :aulas
+
+  controller :sessions do
+    get  "/login",  :action => :new,     :as => :login
+    post "/login",  :action => :create,  :as => false
+
+    get  "/logout", :action => :destroy, :as => :logout
   end
+
+  root 'sessions#new'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

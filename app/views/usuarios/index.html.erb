@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Usuarios</h1>
+<%= link_to "logout", :logout %>
 
 <table>
   <thead>
@@ -22,7 +23,7 @@
         <td><%= usuario.tipoUsuario %></td>
         <td><%= link_to 'Show', usuario %></td>
         <td><%= link_to 'Edit', edit_usuario_path(usuario) %></td>
-        <td><%= link_to 'Destroy', usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', usuario, method: :delete, data: { confirm: 'Voce tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

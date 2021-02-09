@@ -1,9 +1,11 @@
 class AulasController < ApplicationController
   before_action :set_aula, only: %i[ show edit update destroy ]
+  before_action :require_logged_user
 
   # GET /aulas or /aulas.json
   def index
-    @aulas = Aula.all
+    @curso = Curso.find(params[:curso_id])
+    @aulas = @curso.aulas
   end
 
   # GET /aulas/1 or /aulas/1.json
@@ -12,7 +14,9 @@ class AulasController < ApplicationController
 
   # GET /aulas/new
   def new
-    @aula = Aula.new
+    @usuario = Usuario.find(params[:usuario_id])
+    @curso = Curso.find(params[:curso_id])
+    @aula = @curso.aulas.new
   end
 
   # GET /aulas/1/edit
@@ -21,11 +25,12 @@ class AulasController < ApplicationController
 
   # POST /aulas or /aulas.json
   def create
-    @aula = Aula.new(aula_params)
+    @curso = Curso.find(params[:curso_id])
+    @aula = @curso.aulas.new(aula_params)
 
     respond_to do |format|
       if @aula.save
-        format.html { redirect_to @aula, notice: "Aula was successfully created." }
+        format.html { redirect_to usuario_curso_aulas_path, notice: "Aula was successfully created." }
         format.json { render :show, status: :created, location: @aula }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -51,7 +56,7 @@ class AulasController < ApplicationController
   def destroy
     @aula.destroy
     respond_to do |format|
-      format.html { redirect_to aulas_url, notice: "Aula was successfully destroyed." }
+      format.html { redirect_to usuario_curso_aulas_path, notice: "Aula was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -64,6 +69,6 @@ class AulasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def aula_params
-      params.require(:aula).permit(:conteudo, :curso_id)
+      params.require(:aula).permit(:nomeAula, :conteudo, :curso_id)
     end
 end

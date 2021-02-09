@@ -1,4 +1,4 @@
-<%= form_with(model: curso, local: true) do |form| %>
+<%= form_for([@current_user, @curso]) do |form| %>
   <% if curso.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(curso.errors.count, "error") %> prohibited this curso from being saved:</h2>
@@ -12,8 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :nomeCurso %>
+    <label>Nome do curso</label>
+    <% form.label :nomeCurso %>
     <%= form.text_field :nomeCurso %>
+  </div>
+
+  <div class="field">
+    <label>Detalher do curso</label>
+    <% form.label :detalhesCurso %>
+    <%= form.text_area :detalhesCurso %>
   </div>
 
   <div class="field">
