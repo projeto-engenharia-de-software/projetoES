@@ -14,8 +14,8 @@ class ComentariosTest < ApplicationSystemTestCase
     visit comentarios_url
     click_on "New Comentario"
 
-    fill_in "Aula", with: @comentario.aula
     fill_in "Comentario", with: @comentario.comentario
+    fill_in "Curso", with: @comentario.curso_id
     fill_in "Usuario", with: @comentario.usuario_id
     click_on "Create Comentario"
 
@@ -27,8 +27,8 @@ class ComentariosTest < ApplicationSystemTestCase
     visit comentarios_url
     click_on "Edit", match: :first
 
-    fill_in "Aula", with: @comentario.aula
     fill_in "Comentario", with: @comentario.comentario
+    fill_in "Curso", with: @comentario.curso_id
     fill_in "Usuario", with: @comentario.usuario_id
     click_on "Update Comentario"
 

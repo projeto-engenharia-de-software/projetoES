@@ -1,7 +1,7 @@
 class UsuariosController < ApplicationController
   before_action :set_usuario, only: %i[ show edit update destroy ]
-  before_action :require_logged_user, only: %i[ index show edit update destroy]
-  before_action :id_admin?, only: %i[index]
+  before_action :require_logged_user, only: %i[index show edit update destroy]
+  before_action :is_admin?, only: %i[index]
 
   # GET /usuarios or /usuarios.json
   def index
@@ -10,7 +10,6 @@ class UsuariosController < ApplicationController
 
   # GET /usuarios/1 or /usuarios/1.json
   def show
-    @current_user
   end
 
   # GET /usuarios/new
@@ -41,9 +40,7 @@ class UsuariosController < ApplicationController
   def update
     respond_to do |format|
       if @usuario.update(usuario_params)
-        if @current_user.id == @usuario.id
-          @current_user = @usuario
-        end
+        @current_user = @usuario
         format.html { redirect_to @usuario, notice: "Usuario atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @usuario }
       else
@@ -56,7 +53,7 @@ class UsuariosController < ApplicationController
   # DELETE /usuarios/1 or /usuarios/1.json
   def destroy
     @usuario.destroy
-    if !@current_user.nil? and @usuario != nil and @current_user.id == @usuario.id
+    if !@current_user.nil? and !@usuario.nil? and @current_user.id == @usuario.id
       :logout
       respond_to do |format|
         format.html { redirect_to login_path, notice: "usuario apagado com sucesso" }
@@ -78,6 +75,6 @@ class UsuariosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def usuario_params
-      params.require(:usuario).permit(:email, :senha, :nomeUsuario, :tipoUsuario)
+      params.require(:usuario).permit(:nomeUsuario, :email, :senha, :tipoUsuario)
     end
 end

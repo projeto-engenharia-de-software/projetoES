@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_31_231721) do
+ActiveRecord::Schema.define(version: 2021_02_15_183323) do
 
   create_table "aulas", force: :cascade do |t|
     t.string "nomeAula"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_01_31_231721) do
   create_table "comentarios", force: :cascade do |t|
     t.text "comentario"
     t.integer "usuario_id", null: false
-    t.integer "curso_id"
+    t.integer "curso_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["curso_id"], name: "index_comentarios_on_curso_id"
@@ -41,15 +41,16 @@ ActiveRecord::Schema.define(version: 2021_01_31_231721) do
   end
 
   create_table "usuarios", force: :cascade do |t|
+    t.string "nomeUsuario"
     t.string "email"
     t.string "senha"
-    t.string "nomeUsuario"
     t.integer "tipoUsuario"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "aulas", "cursos"
+  add_foreign_key "comentarios", "cursos"
   add_foreign_key "comentarios", "usuarios"
   add_foreign_key "cursos", "usuarios"
 end

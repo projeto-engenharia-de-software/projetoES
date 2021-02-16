@@ -16,6 +16,7 @@ class AulasTest < ApplicationSystemTestCase
 
     fill_in "Conteudo", with: @aula.conteudo
     fill_in "Curso", with: @aula.curso_id
+    fill_in "Nomeaula", with: @aula.nomeAula
     click_on "Create Aula"
 
     assert_text "Aula was successfully created"
@@ -28,6 +29,7 @@ class AulasTest < ApplicationSystemTestCase
 
     fill_in "Conteudo", with: @aula.conteudo
     fill_in "Curso", with: @aula.curso_id
+    fill_in "Nomeaula", with: @aula.nomeAula
     click_on "Update Aula"
 
     assert_text "Aula was successfully updated"

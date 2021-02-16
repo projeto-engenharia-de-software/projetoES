@@ -12,6 +12,12 @@
   <% end %>
 
   <div class="field">
+    <label>Nome de usuario</label>
+    <% form.label :nomeUsuario %>
+    <%= form.text_field :nomeUsuario %>
+  </div>
+
+  <div class="field">
     <label>Email</label>
     <% form.label :email %>
     <%= form.text_field :email %>
@@ -21,12 +27,6 @@
     <label>Senha</label>
     <% form.label :senha %>
     <%= form.text_field :senha %>
-  </div>
-
-  <div class="field">
-    <label>Nome de usuario</label>
-    <% form.label :nomeUsuario %>
-    <%= form.text_field :nomeUsuario %>
   </div>
 
   <div class="field">

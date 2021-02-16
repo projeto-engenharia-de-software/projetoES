@@ -1,9 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  conteudo: 
+  nomeAula: MyString
+  conteudo: MyString
   curso: one
 
 two:
-  conteudo: 
+  nomeAula: MyString
+  conteudo: MyString
   curso: two

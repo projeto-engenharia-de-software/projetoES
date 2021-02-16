@@ -1,6 +1,7 @@
 class ComentariosController < ApplicationController
   before_action :set_comentario, only: %i[ show edit update destroy ]
   before_action :require_logged_user
+
   # GET /comentarios or /comentarios.json
   def index
     @comentarios = Comentario.all
@@ -23,7 +24,8 @@ class ComentariosController < ApplicationController
 
   # POST /comentarios or /comentarios.json
   def create
-    @curso = Curso.find(params[:curso_id])
+    @usuario = Usuario.find(params[:usuario_id])
+    @curso = @usuario.cursos.find(params[:curso_id])
     @comentario = @curso.comentarios.new(comentario_params)
     @comentario.usuario_id = @current_user.id
 

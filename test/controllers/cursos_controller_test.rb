@@ -11,16 +11,16 @@ class CursosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_curso_url
+    get new_usuario_curso_url
     assert_response :success
   end
 
   test "should create curso" do
     assert_difference('Curso.count') do
-      post cursos_url, params: { curso: { nomeCurso: @curso.nomeCurso, usuario_id: @curso.usuario_id } }
+      post usuario_cursos_url, params: { curso: { detalhesCurso: @curso.detalhesCurso, nomeCurso: @curso.nomeCurso, usuario_id: @curso.usuario_id } }
     end
 
-    assert_redirected_to curso_url(Curso.last)
+    assert_redirected_to usuario_curso_url(Curso.last)
   end
 
   test "should show curso" do
@@ -34,7 +34,7 @@ class CursosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update curso" do
-    patch curso_url(@curso), params: { curso: { nomeCurso: @curso.nomeCurso, usuario_id: @curso.usuario_id } }
+    patch curso_url(@curso), params: { curso: { detalhesCurso: @curso.detalhesCurso, nomeCurso: @curso.nomeCurso, usuario_id: @curso.usuario_id } }
     assert_redirected_to curso_url(@curso)
   end
 
