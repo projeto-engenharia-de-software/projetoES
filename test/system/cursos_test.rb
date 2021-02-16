@@ -14,6 +14,7 @@ class CursosTest < ApplicationSystemTestCase
     visit cursos_url
     click_on "New Curso"
 
+    fill_in "Detalhescurso", with: @curso.detalhesCurso
     fill_in "Nomecurso", with: @curso.nomeCurso
     fill_in "Usuario", with: @curso.usuario_id
     click_on "Create Curso"
@@ -26,6 +27,7 @@ class CursosTest < ApplicationSystemTestCase
     visit cursos_url
     click_on "Edit", match: :first
 
+    fill_in "Detalhescurso", with: @curso.detalhesCurso
     fill_in "Nomecurso", with: @curso.nomeCurso
     fill_in "Usuario", with: @curso.usuario_id
     click_on "Update Curso"

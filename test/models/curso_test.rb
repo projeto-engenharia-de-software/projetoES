@@ -13,7 +13,7 @@ class CursoTest < ActiveSupport::TestCase
   end
 
   test 'deve criar curso corretamente' do
-    curso = Curso.new nomeCurso: "ruby on rails", detalhesCurso: "detalhes do curso de rails"
+    curso = Curso.new nomeCurso: 'ruby on rails', detalhesCurso: 'detalhes do curso de rails', usuario: @usuario = usuarios(:one)
     assert curso.save
   end
 

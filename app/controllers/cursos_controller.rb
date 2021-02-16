@@ -2,7 +2,6 @@ class CursosController < ApplicationController
   before_action :set_curso, only: %i[ show edit update destroy ]
   before_action :require_logged_user
 
-
   # GET /cursos or /cursos.json
   def index
     @cursos = Curso.all

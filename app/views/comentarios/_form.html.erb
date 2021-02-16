@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :comentario %>
-    <%= form.text_field :comentario %>
+    <%= form.text_area :comentario %>
   </div>
 
   <div class="field">
     <%= form.label :usuario_id %>
-    <%= form.text_field :usuario_id %>
+    <%= form.text_field :usuario_id, :value => @current_user.id %>
   </div>
 
   <div class="field">

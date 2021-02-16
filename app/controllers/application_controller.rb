@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     @current_user ||= session[:usuario_id] && Usuario.find_by_id(session[:usuario_id])
   end
 
-  def id_admin?
+  def is_admin?
     if !current_user.nil? and current_user.tipoUsuario != 1
       redirect_to usuario_path(current_user.id)
     end

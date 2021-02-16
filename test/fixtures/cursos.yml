@@ -2,8 +2,10 @@
 
 one:
   nomeCurso: MyString
+  detalhesCurso: MyString
   usuario: one
 
 two:
   nomeCurso: MyString
+  detalhesCurso: MyString
   usuario: two

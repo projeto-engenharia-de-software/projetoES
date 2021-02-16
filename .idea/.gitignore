@@ -2,7 +2,7 @@
 /shelf/
 /workspace.xml
 # Datasource local storage ignored files
-/../../../../../../:\Users\rafael.cavalcanti\RubymineProjects\projetoES\.idea/dataSources/
+/../../../../../../../:\Users\rafael.cavalcanti\Documents\GitHub\projetoES\.idea/dataSources/
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/

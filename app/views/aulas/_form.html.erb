@@ -1,5 +1,5 @@
 <%= form_for([@usuario, @curso, @aula]) do |form| %>
-  <% if @aula.errors.any? %>
+  <% if aula.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(aula.errors.count, "error") %> prohibited this aula from being saved:</h2>
 

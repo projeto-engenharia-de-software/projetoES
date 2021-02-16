@@ -2,6 +2,11 @@
 
 <%= link_to "logout", :logout %>
 <p>
+  <strong>Nome de usuario:</strong>
+  <%= @usuario.nomeUsuario %>
+</p>
+
+<p>
   <strong>Email:</strong>
   <%= @usuario.email %>
 </p>
@@ -9,11 +14,6 @@
 <p>
   <strong>Senha:</strong>
   <%= @usuario.senha %>
-</p>
-
-<p>
-  <strong>Nome de usuario:</strong>
-  <%= @usuario.nomeUsuario %>
 </p>
 
 <p>

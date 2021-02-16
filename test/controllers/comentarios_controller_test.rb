@@ -17,7 +17,7 @@ class ComentariosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create comentario" do
     assert_difference('Comentario.count') do
-      post comentarios_url, params: { comentario: { aula: @comentario.aula, comentario: @comentario.comentario, usuario_id: @comentario.usuario_id } }
+      post comentarios_url, params: { comentario: { comentario: @comentario.comentario, curso_id: @comentario.curso_id, usuario_id: @comentario.usuario_id } }
     end
 
     assert_redirected_to comentario_url(Comentario.last)
@@ -34,7 +34,7 @@ class ComentariosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update comentario" do
-    patch comentario_url(@comentario), params: { comentario: { aula: @comentario.aula, comentario: @comentario.comentario, usuario_id: @comentario.usuario_id } }
+    patch comentario_url(@comentario), params: { comentario: { comentario: @comentario.comentario, curso_id: @comentario.curso_id, usuario_id: @comentario.usuario_id } }
     assert_redirected_to comentario_url(@comentario)
   end
 
