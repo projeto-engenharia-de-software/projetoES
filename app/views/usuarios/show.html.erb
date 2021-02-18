@@ -21,9 +21,9 @@
   <%= @usuario.tipoUsuario %>
 </p>
 
-<%= link_to 'editar', edit_usuario_path(@usuario) %> |
-<%= link_to 'Destroy', @usuario, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Editar', edit_usuario_path(@usuario) %> |
+<%= link_to 'Apagar', @usuario, method: :delete, data: { confirm: 'Tem certeza que deseja apagar sua conta?' } %> |
+<%= link_to 'Cursos',  usuario_cursos_path(@usuario) %> |
 <% if @usuario.tipoUsuario == 1 %>
-  <%= link_to 'Novo curso', new_usuario_curso_path(@usuario)%> |
+  <%= link_to 'Novo curso', new_usuario_curso_path(@usuario)%>
 <% end %>
-<%= link_to 'Cursos',  usuario_cursos_path(@usuario) %>

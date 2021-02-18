@@ -18,17 +18,17 @@
   </div>
 
   <div class="field">
-    <label>Detalher do curso</label>
+    <label>Detalhes do curso</label>
     <% form.label :detalhesCurso %>
     <%= form.text_area :detalhesCurso %>
   </div>
 
   <div class="field">
-    <%= form.label :usuario_id %>
-    <%= form.text_field :usuario_id %>
+    <% form.label :usuario_id %>
+    <% form.text_field :usuario_id %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Criar curso"%>
   </div>
 <% end %>

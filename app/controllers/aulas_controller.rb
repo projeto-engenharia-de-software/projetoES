@@ -21,6 +21,8 @@ class AulasController < ApplicationController
 
   # GET /aulas/1/edit
   def edit
+    @usuario = Usuario.find(params[:usuario_id])
+    @curso = @usuario.cursos.find(params[:curso_id])
   end
 
   # POST /aulas or /aulas.json
@@ -30,7 +32,7 @@ class AulasController < ApplicationController
 
     respond_to do |format|
       if @aula.save
-        format.html { redirect_to usuario_curso_aulas_path, notice: "Aula was successfully created." }
+        format.html { redirect_to usuario_curso_aulas_path, notice: "Aula criada com sucesso." }
         format.json { render :show, status: :created, location: @aula }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -43,7 +45,7 @@ class AulasController < ApplicationController
   def update
     respond_to do |format|
       if @aula.update(aula_params)
-        format.html { redirect_to @aula, notice: "Aula was successfully updated." }
+        format.html { redirect_to usuario_curso_aulas_path, notice: "Aula atualizada com sucesso." }
         format.json { render :show, status: :ok, location: @aula }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -56,7 +58,7 @@ class AulasController < ApplicationController
   def destroy
     @aula.destroy
     respond_to do |format|
-      format.html { redirect_to usuario_curso_aulas_path, notice: "Aula was successfully destroyed." }
+      format.html { redirect_to usuario_curso_aulas_url, notice: "Aula apagada com sucesso" }
       format.json { head :no_content }
     end
   end

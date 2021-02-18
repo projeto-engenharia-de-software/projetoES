@@ -3,23 +3,25 @@
 <p>
   <strong>Nome do curso:</strong>
   <%= @curso.nomeCurso %>
+  <%= @curso.id %>
 </p>
 
 <p>
-  <strong>detalhesCurso:</strong>
+  <strong>Detalhes do curso:</strong>
   <%= @curso.detalhesCurso %>
+
 </p>
 
 <p>
-  <strong>Usuario:</strong>
-  <%= @curso.usuario_id %>
+  <strong>Criador:</strong>
+  <%= Usuario.find_by(id: @curso.usuario_id).nomeUsuario %>
 </p>
 
-<%= link_to 'Edit', edit_usuario_curso_path(@curso) %> |
-<%= link_to 'Back', usuario_cursos_path %>
-<%= link_to 'Aulas', usuario_curso_aulas_path(@current_user, @curso) %>
+<%= link_to 'Voltar', usuario_cursos_path %> |
 <% if @current_user.id == @curso.usuario_id %>
-  <%= link_to 'nova aula', new_usuario_curso_aula_path(@current_user, @curso) %>
+  <%= link_to 'Editar', edit_usuario_curso_path(@curso) %> |
+  <%= link_to 'Nova aula', new_usuario_curso_aula_path(@current_user, @curso) %> |
 <% end %>
-<%= link_to 'comentarios', usuario_curso_comentarios_path(@current_user, @curso) %>
-<%= link_to 'novo comentario', new_usuario_curso_comentario_path(@current_user, @curso) %>
+<%= link_to 'Aulas', usuario_curso_aulas_path(@current_user, @curso) %> |
+<%= link_to 'Comentarios', usuario_curso_comentarios_path(@current_user, @curso) %> |
+<%= link_to 'Novo comentario', new_usuario_curso_comentario_path(@current_user, @curso) %>

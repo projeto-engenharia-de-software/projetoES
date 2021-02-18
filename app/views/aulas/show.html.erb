@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Voltar', usuario_curso_aulas_path %>
 <p>
-  <strong>Nomeaula:</strong>
+  <strong>Nome da aula:</strong>
   <%= @aula.nomeAula %>
 </p>
 
-<p>
-  <strong>Conteudo:</strong>
-  <%= @aula.conteudo %>
-</p>
+<% conteudo = "https://player.vimeo.com/video/" + @aula.conteudo + "?autoplay=1&loop=1&color=ffffff&title=0&byline=0&portrait=0" %>
 
-<p>
-  <strong>Curso:</strong>
-  <%= @aula.curso_id %>
-</p>
 
+<div style="padding:52.81% 0 0 0;position:relative;">
+  <iframe src=<%=conteudo%>
+          style="position:absolute;top:0;left:0;width:100%;height:100%;"
+          frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+  </iframe>
+</div>

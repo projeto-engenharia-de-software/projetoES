@@ -4,7 +4,9 @@ class ComentariosController < ApplicationController
 
   # GET /comentarios or /comentarios.json
   def index
-    @comentarios = Comentario.all
+    @curso = Curso.find(params[:curso_id])
+    @comentario = @curso.comentarios
+    @usuario = Usuario.find(params[:usuario_id])
   end
 
   # GET /comentarios/1 or /comentarios/1.json
@@ -14,7 +16,7 @@ class ComentariosController < ApplicationController
   # GET /comentarios/new
   def new
     @usuario = Usuario.find(params[:usuario_id])
-    @curso = @usuario.cursos.find(params[:curso_id])
+    @curso = Curso.find(params[:curso_id])
     @comentario = @curso.comentarios.new
   end
 
@@ -25,13 +27,13 @@ class ComentariosController < ApplicationController
   # POST /comentarios or /comentarios.json
   def create
     @usuario = Usuario.find(params[:usuario_id])
-    @curso = @usuario.cursos.find(params[:curso_id])
+    @curso = Curso.find(params[:curso_id])
     @comentario = @curso.comentarios.new(comentario_params)
     @comentario.usuario_id = @current_user.id
 
     respond_to do |format|
       if @comentario.save
-        format.html { redirect_to @comentario, notice: "Comentario was successfully created." }
+        format.html { redirect_to usuario_curso_comentarios_path(@current_user, @curso), notice: "Comentario adicionado com sucesso." }
         format.json { render :show, status: :created, location: @comentario }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -44,7 +46,7 @@ class ComentariosController < ApplicationController
   def update
     respond_to do |format|
       if @comentario.update(comentario_params)
-        format.html { redirect_to @comentario, notice: "Comentario was successfully updated." }
+        format.html { redirect_to usuario_curso_comentario_path, notice: "Comentario was successfully updated." }
         format.json { render :show, status: :ok, location: @comentario }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -57,7 +59,7 @@ class ComentariosController < ApplicationController
   def destroy
     @comentario.destroy
     respond_to do |format|
-      format.html { redirect_to comentarios_url, notice: "Comentario was successfully destroyed." }
+      format.html { redirect_to usuario_curso_comentarios_path, notice: "Comentario apagado." }
       format.json { head :no_content }
     end
   end
