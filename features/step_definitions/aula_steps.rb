@@ -47,7 +47,7 @@ end
 
 
 Then('O sistema informa que nao pode criar uma aula com conteudo invalida') do
-  assert_selector('div#error_explanation', text: 'Conteudo is too short (minimum is 9 characters)')
+  assert_selector('div#error_explanation', text: 'Conteudo is too short (minimum is 7 characters)')
 end
 
 Then('O sistema informa que a aula foi adicionada com sucesso') do
