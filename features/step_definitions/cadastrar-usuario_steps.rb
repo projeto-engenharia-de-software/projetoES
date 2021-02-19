@@ -6,7 +6,7 @@ Given("Eu clico em novo usuario") do
 end
 
 When("Clico em cadastrar") do
-  click_button "Create Usuario"
+  click_button "Criar usuario"
 end
 
 Then("O sistema informa que nao pode cadastrar usuario em branco") do

@@ -20,7 +20,7 @@
         <td><%= link_to 'Ver', usuario_curso_aula_path(@current_user,aula.curso_id, aula) %></td>
         <% if @current_user.id == @curso.usuario_id %>
           <td><%= link_to 'Editar aula', edit_usuario_curso_aula_path(@current_user.id, aula.curso_id, aula) %></td>
-          <td><%= link_to 'Apagar aula', usuario_curso_aula_path(@current_user.id, aula.curso_id, aula), method: :delete, data: { confirm: 'Tem certeza que deseja apagar esse aula?' } %></td>
+          <td><%= link_to 'Apagar aula', usuario_curso_aula_path(@current_user.id, aula.curso_id, aula), id: "d-#{aula.nomeAula}", method: :delete, data: { confirm: 'Tem certeza que deseja apagar esse aula?' } %></td>
         <% end %>
       </tr>
     <% end %>

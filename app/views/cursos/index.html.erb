@@ -15,7 +15,7 @@
       <tr>
         <td><%= curso.nomeCurso %></td>
         <td><%= Usuario.find_by(id: curso.usuario_id).nomeUsuario %></td>
-        <td><%= link_to 'Ver', [@current_user, curso] %></td>
+        <td><%= link_to 'Ver', [@current_user, curso], id: "v-#{curso.nomeCurso}" %></td>
         <% if @current_user.id == curso.usuario_id %>
           <td><%= link_to 'Editar', edit_usuario_curso_path(curso.usuario_id, curso) %></td>
           <td><%= link_to 'Apagar', [@current_user, curso], id:"d-#{curso.nomeCurso}", method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' } %></td>

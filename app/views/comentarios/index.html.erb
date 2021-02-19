@@ -19,7 +19,7 @@
         <td><%= Usuario.find_by(id: comentario.usuario_id).nomeUsuario %></td>
         <td><%= comentario.curso_id %></td>
         <% if @current_user.id == comentario.usuario_id  or @current_user.id == @curso.usuario_id %>
-          <td><%= link_to 'Apagar comentario', usuario_curso_comentario_path(@current_user.id, comentario.curso_id, comentario.id ), method: :delete, data: { confirm: 'Tem certeza que deseja apagar esse comentario?' } %></td>
+          <td><%= link_to 'Apagar comentario', usuario_curso_comentario_path(@current_user.id, comentario.curso_id, comentario.id ), id: "d-#{comentario.comentario}" ,method: :delete, data: { confirm: 'Tem certeza que deseja apagar esse comentario?' } %></td>
         <% end %>
       </tr>
     <% end %>

@@ -1,10 +1,10 @@
 <%= form_for([@current_user, @curso, @aula]) do |form| %>
   <% if @aula.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@aula.errors.count, "erro") %> prohibited this aula from being saved:</h2>
+      <h2><%= pluralize(@aula.errors.count, "error") %> prohibited this aula from being saved:</h2>
 
       <ul>
-        <% aula.errors.full_messages.each do |message| %>
+        <% @aula.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <strong> Nome da aula:</strong>
+    <label> Nome da aula:</label>
     <% form.label :nomeAula %>
     <%= form.text_field :nomeAula %>
   </div>
 
   <div class="field">
-    <strong>Link do video:</strong>
+    <label>Link do video:</label>
     <% form.label :conteudo %>
     <%= form.text_field :conteudo, placeholder: "codigo do video no vimeo"%>
   </div>

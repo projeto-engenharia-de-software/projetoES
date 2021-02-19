@@ -32,7 +32,7 @@ class AulasController < ApplicationController
 
     respond_to do |format|
       if @aula.save
-        format.html { redirect_to usuario_curso_aulas_path, notice: "Aula criada com sucesso." }
+        format.html { redirect_to usuario_curso_aulas_path, notice: "Aula adicionada com sucesso." }
         format.json { render :show, status: :created, location: @aula }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -58,7 +58,7 @@ class AulasController < ApplicationController
   def destroy
     @aula.destroy
     respond_to do |format|
-      format.html { redirect_to usuario_curso_aulas_url, notice: "Aula apagada com sucesso" }
+      format.html { redirect_to usuario_curso_aulas_url, notice: "Aula apagada com sucesso." }
       format.json { head :no_content }
     end
   end
