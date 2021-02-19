@@ -6,8 +6,8 @@ Given("Eu estou logado") do
   fill_in "usuario[email]", :with => "usuario@gmail.com"
   fill_in "usuario[senha]", :with => "12345678"
   fill_in "usuario[nomeUsuario]", :with => "usuario teste"
-  choose("admin")
-  click_button "Create Usuario"
+  choose("Professor")
+  click_button "Criar usuario"
   visit "/login"
   find("#email").set('usuario@gmail.com')
   find("#senha").set("12345678")
@@ -20,7 +20,7 @@ And("Clico em novo curso") do
 end
 
 When("Clico em criar curso") do
-  click_button "Create Curso"
+  click_button "Criar curso"
 end
 
 Then("O sistema informa que nao pode criar um curso em branco") do
@@ -57,10 +57,8 @@ When("Clico em cursos") do
   click_link "Novo curso"
   fill_in "curso[nomeCurso]", :with => "ruby on rails"
   fill_in "curso[detalhesCurso]", :with => "detalhes do curso de rails"
-  click_button "Create Curso"
-  click_link "Back"
-  click_link "Back"
-  click_link "Cursos"
+  click_button "Criar curso"
+  click_link "Voltar"
 end
 
 And ("Deleto o curso com nome {string}") do |nomeCurso|

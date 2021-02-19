@@ -26,17 +26,17 @@
   <div class="field">
     <label>Senha</label>
     <% form.label :senha %>
-    <%= form.text_field :senha %>
+    <%= form.text_field :senha, placeholder: "Minimo 8 caracteres" %>
   </div>
 
   <div class="field">
     <label>Tipo de usuario</label>
     <% form.label :tipoUsuario %>
-    <%= form.radio_button :tipoUsuario, 1, id:"admin" %> admin <br />
-    <%= form.radio_button :tipoUsuario, 2, id:"aluno" %> aluno <br />
+    <%= form.radio_button :tipoUsuario, 1, id:"Professor" %> Professor <br />
+    <%= form.radio_button :tipoUsuario, 2, id:"Aluno" %> Aluno <br />
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Criar usuario" %>
   </div>
 <% end %>

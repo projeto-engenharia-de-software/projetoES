@@ -17,8 +17,12 @@ script:
   - bundle exec rails webpacker:compile
   - bundle exec rails test test/models/usuario_test.rb
   - bundle exec rails test test/models/curso_test.rb
+  - bundle exec rails test test/models/aula_test.rb
+  - bundle exec rails test test/models/comentario_test.rb
   - bundle exec cucumber features/cadastrar-usuario.feature
   - bundle exec cucumber features/curso.feature
+  - bundle exec cucumber features/aula.feature
+  - bundle exec cucumber features/comentario.feature
 
 services:
   - postgresql

@@ -9,6 +9,7 @@ class CursosController < ApplicationController
 
   # GET /cursos/1 or /cursos/1.json
   def show
+    @usuario = Usuario.find(params[:usuario_id])
   end
 
   # GET /cursos/new

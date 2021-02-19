@@ -6,19 +6,22 @@
   <thead>
     <tr>
       <th>Nome da aula</th>
-      <th>Curso</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
+    <p>
+      <strong>Curso: </strong><%= @curso.nomeCurso %>
+    </p>
     <% @aulas.each do |aula| %>
       <tr>
         <td><%= aula.nomeAula%></td>
-        <td><%= aula.curso_id %></td>
-        <td><%= link_to 'Show', usuario_curso_aula_path(@current_user,aula.curso_id, aula) %></td>
-        <td><%= link_to 'Edit', edit_usuario_curso_aula_path(@current_user.id, aula.curso_id, aula) %></td>
-        <td><%= link_to 'Destroy', usuario_curso_aula_path(@current_user.id, aula.curso_id, aula), method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+        <td><%= link_to 'Ver', usuario_curso_aula_path(@current_user,aula.curso_id, aula) %></td>
+        <% if @current_user.id == @curso.usuario_id %>
+          <td><%= link_to 'Editar aula', edit_usuario_curso_aula_path(@current_user.id, aula.curso_id, aula) %></td>
+          <td><%= link_to 'Apagar aula', usuario_curso_aula_path(@current_user.id, aula.curso_id, aula), id: "d-#{aula.nomeAula}", method: :delete, data: { confirm: 'Tem certeza que deseja apagar esse aula?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +29,4 @@
 
 <br>
 
-<%= link_to 'Back', usuario_cursos_path %>
+<%= link_to 'Voltar', usuario_curso_path(@current_user, @curso) %>

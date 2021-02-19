@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CursoTest < ActiveSupport::TestCase
 
-  test 'nao deve criar usuario vazio' do
+  test 'nao deve criar curso vazio' do
     curso = Curso.new
     assert_not curso.save
   end

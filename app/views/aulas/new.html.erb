@@ -1,5 +1,5 @@
-<h1>New Aula</h1>
+<h1>Nova Aula</h1>
 
 <%= render 'form', curso: @curso, aula: @aula %>
 
-<%= link_to 'Back', usuario_curso_aulas_path %>
+<%= link_to 'Voltar', usuario_curso_path(@current_user, @curso) %>
