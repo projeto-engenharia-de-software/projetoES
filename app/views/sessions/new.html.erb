@@ -1,5 +1,14 @@
-<p id="notice"><%= notice %></p>
-<h1>home</h1>
 
-<%= render 'form'  %>
-<%= link_to 'novo usuario', new_usuario_path(@current_user) %>
+
+<body class="body_home">
+  <h1 class="home">Bem vindo</h1>
+  <p id="notice"><%= notice %></p>
+  <%= render 'form'  %>
+  <div class="cadastro_usuario">
+    <h2 class="cadastro_usuario_texto">Cadastre um novo usuario</h2>
+    <%= link_to 'Novo usuario', new_usuario_path(@current_user) %>
+  </div>
+
+
+</body>
+
