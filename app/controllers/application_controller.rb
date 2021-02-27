@@ -40,4 +40,13 @@ class ApplicationController < ActionController::Base
   end
   helper_method :buscar_usuario
 
+  def excluir_comentario(usuario_atual, comentario, criador_curso)
+    if usuario_atual.equal?(comentario) or usuario_atual.equal?(criador_curso)
+      return true
+    else
+      return false
+    end
+  end
+  helper_method :excluir_comentario
+
 end
