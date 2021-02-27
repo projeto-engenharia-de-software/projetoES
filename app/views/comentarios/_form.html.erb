@@ -1,7 +1,8 @@
+<body class="body">
 <%= form_for([@current_user, @curso, @comentario]) do |form| %>
   <% if comentario.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(comentario.errors.count, "error") %> prohibited this comentario from being saved:</h2>
+      <h2 class="error_mensage"><%= pluralize(comentario.errors.count, "error") %> prohibited this comentario from being saved:</h2>
 
       <ul>
         <% comentario.errors.full_messages.each do |message| %>
@@ -11,22 +12,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :comentario %>
-    <%= form.text_area :comentario %>
+  <div class="form">
+    <div class="field">
+      <label class="label">Comentario</label>
+      <% form.label :comentario %>
+      <%= form.text_area :comentario, class: "form_input_area" %>
+    </div>
+
+    <div class="field">
+      <% form.label :usuario_id %>
+      <% form.text_field :usuario_id, :value => @current_user.id %>
+    </div>
+
+    <div class="field">
+      <% form.label :curso_id %>
+      <% form.text_field :curso_id %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class:"acao" %>
+    </div>
   </div>
 
-  <div class="field">
-    <% form.label :usuario_id %>
-    <% form.text_field :usuario_id, :value => @current_user.id %>
-  </div>
-
-  <div class="field">
-    <% form.label :curso_id %>
-    <% form.text_field :curso_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Adicionar comentario" %>
-  </div>
 <% end %>
+</body>

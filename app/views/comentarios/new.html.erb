@@ -1,5 +1,6 @@
-<h1>Novo Comentario</h1>
+<h1 class="home">Novo Comentario</h1>
 
 <%= render 'form', usuario:@current_user, comentario: @comentario %>
-
+<div class="botoes">
 <%= link_to 'Voltar', usuario_curso_path(@current_user, @curso) %>
+</div>
