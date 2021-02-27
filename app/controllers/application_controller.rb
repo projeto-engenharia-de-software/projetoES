@@ -34,4 +34,10 @@ class ApplicationController < ActionController::Base
   end
   helper_method :mesmo_usuario
 
+  def buscar_usuario(id_usuario)
+    @usuario = Usuario.find_by(id:id_usuario)
+    return @usuario.nomeUsuario
+  end
+  helper_method :buscar_usuario
+
 end
