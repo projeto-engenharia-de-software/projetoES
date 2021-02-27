@@ -1,7 +1,7 @@
 // Place all the styles related to the Usuarios controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.body{
+.body {
   display: flex;
   flex-direction: column;
   font-size: 18px;
@@ -14,7 +14,7 @@
   backdrop-filter: blur(3px);
 }
 
-.field{
+.field {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@
   margin-right: auto;
 }
 
-.form_input{
+.form_input {
   border: 0;
   font-size: 18px;
   height: 28px;
@@ -32,7 +32,7 @@
   padding-left: 7px;
 }
 
-.form_input_area{
+.form_input_area {
   border: 0;
   font-size: 18px;
   height: 60px;
@@ -41,38 +41,40 @@
   padding-left: 7px;
 }
 
-.form_input:hover, .form_input_area:hover{
+.form_input:hover,
+.form_input_area:hover {
   background-color: #43C6AC;
 }
 
-.field_tipo_usuario{
+.field_tipo_usuario {
   display: flex;
   margin-top: 6px;
 }
 
-.form{
+.form {
   margin-top: 30px;
 }
 
-.radio_button_a, .radio_button_p{
+.radio_button_a,
+.radio_button_p {
   height: 18px;
   width: 18px;
   margin-right: 3px;
   float: left;
 }
 
-.radio_button_a{
+.radio_button_a {
   margin-left: 8px;
 }
 
-.actions{
+.actions {
   margin-top: 30px;
   display: flex;
   margin-left: auto;
   margin-right: auto;
 }
 
-.acao{
+.acao {
   margin-left: auto;
   margin-right: auto;
   font-family: "Montserrat", Sans-Serif;
@@ -84,11 +86,11 @@
   border-radius: 20px;
 }
 
-.acao:hover{
+.acao:hover {
   background-color: #43C6AC;
 }
 
-#error_explanation{
+#error_explanation {
   margin-top: 20px;
   color: black;
   border: 0;
@@ -97,7 +99,7 @@
   margin-left: auto;
 }
 
-.error_mensage{
+.error_mensage {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
