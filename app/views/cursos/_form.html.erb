@@ -1,7 +1,8 @@
+<body class="body">
 <%= form_for([@current_user, @curso]) do |form| %>
   <% if curso.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(curso.errors.count, "error") %> prohibited this curso from being saved:</h2>
+      <h2 class="error_mensage"><%= pluralize(curso.errors.count, "error") %> prohibited this curso from being saved:</h2>
 
       <ul>
         <% curso.errors.full_messages.each do |message| %>
@@ -11,24 +12,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <label>Nome do curso</label>
-    <% form.label :nomeCurso %>
-    <%= form.text_field :nomeCurso %>
-  </div>
+  <div class="form">
+    <div class="field">
+      <label class="label">Nome do curso</label>
+      <% form.label :nomeCurso %>
+      <%= form.text_field :nomeCurso, class: "form_input" %>
+    </div>
 
-  <div class="field">
-    <label>Detalhes do curso</label>
-    <% form.label :detalhesCurso %>
-    <%= form.text_area :detalhesCurso %>
-  </div>
+    <div class="field">
+      <label class="label">Detalhes do curso</label>
+      <% form.label :detalhesCurso %>
+      <%= form.text_area :detalhesCurso, class: "form_input_area" %>
+    </div>
 
-  <div class="field">
-    <% form.label :usuario_id %>
-    <% form.text_field :usuario_id %>
-  </div>
+    <div class="field">
+      <% form.label :usuario_id %>
+      <% form.text_field :usuario_id %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit "Criar curso" %>
+    <div class="actions">
+      <%= form.submit class:"acao" %>
+    </div>
+
   </div>
 <% end %>
+</body>

@@ -1,27 +1,33 @@
-<p id="notice"><%= notice %></p>
+<body class="body">
 
-<p>
-  <strong>Nome do curso:</strong>
-  <%= @curso.nomeCurso %>
-  <%= @curso.id %>
-</p>
+  <p id="notice" class="notice"><%= notice %></p>
 
-<p>
-  <strong>Detalhes do curso:</strong>
-  <%= @curso.detalhesCurso %>
+  <div class="info_curso">
+    <div class="field_show">
+      <label class="label" id="criador_curso">Criador:</label>
+      <%= buscar_usuario(@curso.usuario_id) %>
+    </div>
 
-</p>
+    <div class="field_show">
+      <label class="label" id="nome_curso">Nome do curso:</label>
+      <%= @curso.nomeCurso %>
+    </div>
 
-<p>
-  <strong>Criador:</strong>
-  <%= Usuario.find_by(id: @curso.usuario_id).nomeUsuario %>
-</p>
+    <div class="field_show">
+      <label class="label" id="detalhes_curso">Detalhes do curso:</label>
+      <%= @curso.detalhesCurso %>
 
-<%= link_to 'Voltar', usuario_cursos_path %> |
-<% if @current_user.id == @curso.usuario_id %>
-  <%= link_to 'Editar', edit_usuario_curso_path(@curso) %> |
-  <%= link_to 'Nova aula', new_usuario_curso_aula_path(@current_user, @curso) %> |
-<% end %>
-<%= link_to 'Aulas', usuario_curso_aulas_path(@current_user, @curso) %> |
-<%= link_to 'Comentarios', usuario_curso_comentarios_path(@current_user, @curso) %> |
-<%= link_to 'Novo comentario', new_usuario_curso_comentario_path(@current_user, @curso) %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= link_to 'Voltar', usuario_cursos_path, class: "action" %>
+    <% if mesmo_usuario(@current_user.id, @curso.usuario_id) %>
+      <%= link_to 'Editar', edit_usuario_curso_path(@curso), class: "action" %>
+      <%= link_to 'Nova aula', new_usuario_curso_aula_path(@current_user, @curso), class: "action" %>
+    <% end %>
+    <%= link_to 'Aulas', usuario_curso_aulas_path(@current_user, @curso), class: "action" %>
+    <%= link_to 'Comentarios', usuario_curso_comentarios_path(@current_user, @curso), class: "action" %>
+    <%= link_to 'Novo comentario', new_usuario_curso_comentario_path(@current_user, @curso), class: "action" %>
+  </div>
+</body>
