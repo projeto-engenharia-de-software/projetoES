@@ -3,7 +3,7 @@ When ("Clico em novo comentario") do
 end
 
 And ("Clico em Adicionar comentario") do
-  click_button "Adicionar comentario"
+  click_button "Criar Comentario"
 end
 
 Then ("O sistema informa que nao pode criar uma comentario em branco") do
@@ -36,12 +36,12 @@ end
 
 And ("cadastro um usuario nome {string}, senha {string}, email {string} e tipo de usuario {string}") do |nomeUsuario, senha, email, tipoUsuario|
   visit "/login"
-  click_link "novo usuario"
+  click_link "Novo usuario"
   fill_in "usuario[email]", :with => email
   fill_in "usuario[senha]", :with => senha
   fill_in "usuario[nomeUsuario]", :with => nomeUsuario
   choose(tipoUsuario)
-  click_button "Criar usuario"
+  click_button "Criar Usuario"
 end
 
 And ("logo com o usuario professor") do
@@ -65,7 +65,7 @@ When ("crio um comentario {string} no curso {string}") do |comentario, curso|
   click_link "v-#{curso}"
   click_link "Novo comentario"
   fill_in "comentario[comentario]", :with => comentario
-  click_button "Adicionar comentario"
+  click_button "Criar Comentario"
 end
 
 And ("faco logout e logo com o usuario professor") do
