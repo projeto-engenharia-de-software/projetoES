@@ -1,7 +1,7 @@
 // Place all the styles related to the Cursos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.form_view{
+.form_view {
   display: flex;
   flex-direction: column;
   margin-top: 60px;
@@ -9,17 +9,17 @@
   margin-right: auto;
 }
 
-.label_th{
+.label_th {
   margin-top: 10px;
   width: 150px;
   font-size: 18px;
 }
 
-.table{
+.table {
   background: linear-gradient(45deg, #43C6AC, #191654);
 }
 
-.info_curso{
+.info_curso {
   background: linear-gradient(45deg, #43C6AC, #191654);
   border-radius: 10px;
   padding: 10px;
@@ -30,14 +30,14 @@
   margin-top: 100px;
 }
 
-#criador_curso{
+#criador_curso {
   margin-right: 110px;
 }
 
-#nome_curso{
+#nome_curso {
   margin-right: 40px;
 }
 
-#detalhes_curso{
+#detalhes_curso {
   margin-right: 15px;
 }
