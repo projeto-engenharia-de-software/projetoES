@@ -63,6 +63,7 @@ a:active {
   height: 25px;
   border-radius: 20px;
 }
+
 .logar:hover {
   background-color: #43c6ac;
 }
@@ -74,9 +75,10 @@ a:active {
   font-family: "Montserrat", sans-serif;
   border-radius: 7px;
 }
+
 .email:hover,
 .senha:hover {
-  background-color: #43C6AC;
+  background-color: #43c6ac;
 }
 
 .cadastro_usuario {
