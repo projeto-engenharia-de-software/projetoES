@@ -49,4 +49,13 @@ class ApplicationController < ActionController::Base
   end
   helper_method :excluir_comentario
 
+  def professor?(tipo)
+    if tipo==1
+      return true
+    else
+      return false
+    end
+  end
+  helper_method :professor?
+
 end
