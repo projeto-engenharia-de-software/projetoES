@@ -1,5 +1,6 @@
-<h1>Nova Aula</h1>
+<h1 class="home">Nova Aula</h1>
 
 <%= render 'form', curso: @curso, aula: @aula %>
-
+<div class="botoes">
 <%= link_to 'Voltar', usuario_curso_path(@current_user, @curso) %>
+</div>

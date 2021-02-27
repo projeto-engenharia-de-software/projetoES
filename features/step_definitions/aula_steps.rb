@@ -1,11 +1,11 @@
 Given ("Eu cadastro um usuario com nome {string}, senha {string}, email {string} e tipo de usuario {string}") do |nomeUsuario, senha, email, tipoUsuario|
   visit "/login"
-  click_link "novo usuario"
+  click_link "Novo usuario"
   fill_in "usuario[email]", :with => email
   fill_in "usuario[senha]", :with => senha
   fill_in "usuario[nomeUsuario]", :with => nomeUsuario
   choose(tipoUsuario)
-  click_button "Criar usuario"
+  click_button "Criar Usuario"
 end
 
 And ("logo com ele") do
@@ -19,7 +19,7 @@ And("Crio um curso com nome do curso com {string} e detahes do curso com {string
   click_link "Novo curso"
   fill_in "curso[nomeCurso]", :with => nomeCurso
   fill_in "curso[detalhesCurso]", :with => detalhesCurso
-  click_button "Criar curso"
+  click_button "Criar Curso"
 end
 
 When ("Clico em nova aula") do
@@ -27,7 +27,7 @@ When ("Clico em nova aula") do
 end
 
 And ("Clico em criar aula") do
-  click_button "Criar aula"
+  click_button "Criar Aula"
 end
 
 Then ("O sistema informa que nao pode criar uma aula em branco") do

@@ -2,11 +2,11 @@
 
 Given("Eu clico em novo usuario") do
   visit "/login"
-  click_link "novo usuario"
+  click_link "Novo usuario"
 end
 
 When("Clico em cadastrar") do
-  click_button "Criar usuario"
+  click_button "Criar Usuario"
 end
 
 Then("O sistema informa que nao pode cadastrar usuario em branco") do

@@ -1,3 +1,150 @@
 // Place all the styles related to the Usuarios controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.body {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  height: 93vh;
+  width: 90vw;
+  background: linear-gradient(45deg, #43c6ac, #191654);
+  background-size: 100% 100%;
+  backdrop-filter: blur(3px);
+}
+
+.field {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form_input {
+  border: 0;
+  font-size: 18px;
+  height: 28px;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 7px;
+  padding-left: 7px;
+}
+
+.form_input_area {
+  border: 0;
+  font-size: 18px;
+  height: 60px;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 7px;
+  padding-left: 7px;
+}
+
+.form_input:hover,
+.form_input_area:hover {
+  background-color: #43c6ac;
+}
+
+.field_tipo_usuario {
+  display: flex;
+  margin-top: 6px;
+}
+
+.form {
+  margin-top: 30px;
+}
+
+.radio_button_a,
+.radio_button_p {
+  height: 18px;
+  width: 18px;
+  margin-right: 3px;
+  float: left;
+}
+
+.radio_button_a {
+  margin-left: 8px;
+}
+
+.actions {
+  margin-top: 30px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.acao {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Montserrat", Sans-Serif;
+  font-size: 18px;
+  background-color: #fff;
+  border: 0;
+  width: 180px;
+  height: 25px;
+  border-radius: 20px;
+}
+
+.acao:hover {
+  background-color: #43c6ac;
+}
+
+#error_explanation {
+  margin-top: 20px;
+  color: black;
+  border: 0;
+  border-radius: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.error_mensage {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.field_with_errors {
+  border: 0;
+  border-radius: 7px;
+  width: 1px;
+}
+
+.info_usuario {
+  background: linear-gradient(45deg, #43c6ac, #191654);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 40px;
+}
+
+.field_show {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.label {
+  font-size: 20px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  margin-right: 5px;
+}
+
+.action {
+  margin-left: 5px;
+}
+
+#nome {
+  margin-right: 10px;
+}
+
+#email {
+  margin-right: 12px;
+}
+
+#tipo {
+  margin-right: 23px;
+}

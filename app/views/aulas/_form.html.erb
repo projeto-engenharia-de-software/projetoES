@@ -1,7 +1,8 @@
+<body class="body">
 <%= form_for([@current_user, @curso, @aula]) do |form| %>
   <% if @aula.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@aula.errors.count, "error") %> prohibited this aula from being saved:</h2>
+      <h2 class="error_mensage"><%= pluralize(@aula.errors.count, "error") %> prohibited this aula from being saved:</h2>
 
       <ul>
         <% @aula.errors.full_messages.each do |message| %>
@@ -11,24 +12,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <label> Nome da aula:</label>
-    <% form.label :nomeAula %>
-    <%= form.text_field :nomeAula %>
-  </div>
+  <div class="form">
+    <div class="field">
+      <label class="label"> Nome da aula</label>
+      <% form.label :nomeAula %>
+      <%= form.text_field :nomeAula, class: "form_input" %>
+    </div>
 
-  <div class="field">
-    <label>Link do video:</label>
-    <% form.label :conteudo %>
-    <%= form.text_field :conteudo, placeholder: "codigo do video no vimeo"%>
-  </div>
+    <div class="field">
+      <label class="label">Link do video</label>
+      <% form.label :conteudo %>
+      <%= form.text_field :conteudo, placeholder: "codigo do video no vimeo", class: "form_input"%>
+    </div>
 
-  <div class="field">
-    <% form.label :curso_id %>
-    <% form.text_field :curso_id %>
-  </div>
+    <div class="field">
+      <% form.label :curso_id %>
+      <% form.text_field :curso_id %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit "Criar aula" %>
+    <div class="actions">
+      <%= form.submit class:"acao" %>
+    </div>
   </div>
 <% end %>
+</body>

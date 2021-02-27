@@ -24,4 +24,38 @@ class ApplicationController < ActionController::Base
     redirect_to login_path, :notice => "É necessario estar logado para acessar"
   end
 
+  public
+  def mesmo_usuario(id_1, id_2)
+    if id_1.equal?(id_2)
+      return true
+    else
+      return false
+    end
+  end
+  helper_method :mesmo_usuario
+
+  def buscar_usuario(id_usuario)
+    @usuario = Usuario.find_by(id:id_usuario)
+    return @usuario.nomeUsuario
+  end
+  helper_method :buscar_usuario
+
+  def excluir_comentario(usuario_atual, comentario, criador_curso)
+    if usuario_atual.equal?(comentario) or usuario_atual.equal?(criador_curso)
+      return true
+    else
+      return false
+    end
+  end
+  helper_method :excluir_comentario
+
+  def professor?(tipo)
+    if tipo==1
+      return true
+    else
+      return false
+    end
+  end
+  helper_method :professor?
+
 end

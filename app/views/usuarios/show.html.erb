@@ -1,29 +1,39 @@
-<p id="notice"><%= notice %></p>
 
-<%= link_to "logout", :logout %>
-<p>
-  <strong>Nome de usuario:</strong>
-  <%= @usuario.nomeUsuario %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @usuario.email %>
-</p>
+<body class="body">
 
-<p>
-  <strong>Senha:</strong>
-  <%= @usuario.senha %>
-</p>
+  <p id="notice" class="notice"><%= notice %></p>
+  <div class="logout">
+    <%= link_to "logout", :logout %>
+  </div>
 
-<p>
-  <strong>Tipo de usuario:</strong>
-  <%= @usuario.tipoUsuario %>
-</p>
+  <div class="info_usuario">
+    <div class="field_show">
+      <label class="label" id="nome">Nome:</label>
+      <%= @usuario.nomeUsuario %>
+    </div>
 
-<%= link_to 'Editar', edit_usuario_path(@usuario) %> |
-<%= link_to 'Apagar', @usuario, method: :delete, data: { confirm: 'Tem certeza que deseja apagar sua conta?' } %> |
-<%= link_to 'Cursos',  usuario_cursos_path(@usuario) %> |
-<% if @usuario.tipoUsuario == 1 %>
-  <%= link_to 'Novo curso', new_usuario_curso_path(@usuario)%>
-<% end %>
+    <div class="field_show">
+      <label class="label" id="email">Email:</label>
+      <%= @usuario.email %>
+    </div>
+
+    <div class="field_show">
+      <label class="label" id="tipo">Tipo:</label>
+      <%if professor?(@usuario.tipoUsuario) %>
+        <label>Professor</label>
+      <% else %>
+        <label>Aluno</label>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= link_to 'Editar', edit_usuario_path(@usuario), class: "action" %>
+    <%= link_to 'Apagar', @usuario, method: :delete, data: { confirm: 'Tem certeza que deseja apagar sua conta?' }, class: "action" %>
+    <%= link_to 'Cursos',  usuario_cursos_path(@usuario), class: "action" %>
+    <% if professor?(@usuario.tipoUsuario) %>
+      <%= link_to 'Novo curso', new_usuario_curso_path(@usuario), class: "action" %>
+    <% end %>
+  </div>
+</body>
