@@ -24,4 +24,14 @@ class ApplicationController < ActionController::Base
     redirect_to login_path, :notice => "É necessario estar logado para acessar"
   end
 
+  public
+  def mesmo_usuario(id_1, id_2)
+    if id_1.equal?(id_2)
+      return true
+    else
+      return false
+    end
+  end
+  helper_method :mesmo_usuario
+
 end
