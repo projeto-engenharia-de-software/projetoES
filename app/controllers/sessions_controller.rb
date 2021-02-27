@@ -6,10 +6,14 @@ class SessionsController < ApplicationController
 
   end
 
+  def buscar_usuario_logar
+    @usuario = Usuario.find_by_email_and_senha(params[:email], params[:senha])
+  end
+
   def create
     reset_session
 
-    @usuario = Usuario.find_by_email_and_senha(params[:email], params[:senha])
+    @usuario = buscar_usuario_logar
 
     if @usuario
       session[:usuario_id] = @usuario.id
